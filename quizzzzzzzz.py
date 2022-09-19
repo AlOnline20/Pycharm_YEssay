@@ -65,7 +65,6 @@ def instructions():
 questions = {
   "Which Structure Can you not get enchanted books from": "C",
   "Which Minecraft World Seed is more famous": ""
-  "Who is the most famous minecraft Youtuber of all time"
   ""
   ""
   ""
@@ -73,12 +72,11 @@ questions = {
   ""
   ""
   ""
+  " "
 }
 
-# These are the options for the questions.
 options = [["A. Stronghold", "B. Shipwreck", "C. Ruined Nether Portal", "D. "],
-           ["A. 3257840388504953787", "B. 2151901553968352745" "C. 47886854082066804" "D. -4172144997902289642 "],
-           ["A. "],
+           ["A. ", "B. 2151901553968352745" "C. 47886854082066804"],
            ]
 
 instructions()
