@@ -133,6 +133,7 @@ point = 0
 rounds_played = 0
 
 print()
+sleep(2)
 new_game()
 print()
 sleep(2)
