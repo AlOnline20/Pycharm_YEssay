@@ -11,6 +11,8 @@ def new_game():
 
     for key in questions:
         print("------------------------------")
+        print()
+        print("------------------------------")
         print(key)
         for i in options[question_num-1]:
             print(i)
@@ -19,6 +21,8 @@ def new_game():
 
         correct_guesses += check_answer(questions.get(key), guess)
         question_num += 1
+
+    display_score(correct_guesses, guesses)
 
 # This Makes putting in the answers in work
 def check_answer(answer, guess):
@@ -30,6 +34,26 @@ def check_answer(answer, guess):
         print("WRONG +0 Points ")
         return 0
 
+# This is to display the score
+def display_score(correct_guesses, guesses):
+    print("------------------------------")
+    print()
+    print("RESULTS")
+    print()
+    print("------------------------------")
+    print()
+
+    print("Answers:  ", end=" ")
+    for i in questions:
+        print(questions.get(i), end=" ")
+    print()
+
+    print("Guesses:  ", end=" ")
+    for i in guesses:
+        print(i, end=" ")
+
+    score = int((correct_guesses/len(questions))*100)
+    print("Your score is: "+str(score)+"%" " Out of 100%")
 
 # This Makes The Text Look Snazzy
 def statement_generator(statement, decoration):
@@ -57,17 +81,17 @@ def instructions():
     statement_generator(" To play you will answer Multiple choice questions with A/B/C or D ", "?")
     print()
     sleep(2)
-    statement_generator(" If you put in the wrong input you will automatically ")
+    statement_generator(" If you put in the wrong input you will automatically Be wrong ", "W")
     print()
     sleep(3)
-    statement_generator(" Also If you want to exit the Quiz Quest at anytime you just need to type in 'xxx' Have Fun :) ", "7")
+    statement_generator(" Have Fun :) ", "7")
     print()
     sleep(3)
 
 # These are the questions for the quiz
 questions = {
   "Which Structure Can you not get enchanted books from": "C",
-  "Which Minecraft World Seed is more famous": "B",
+  "Which Minecraft World is more famous": "B",
   "Who is the most famous minecraft Youtuber of all time": "A",
   "How much Pieces of Leather/Iron/Gold/Diamonds do you need to make a full set of Armor": "D",
   "When did microsoft buy minecraft": "A",
@@ -80,7 +104,7 @@ questions = {
 
 # These are the options for the questions.
 options = [["A. Stronghold", "B. Shipwreck", "C. Ruined Nether Portal", "D. Bastion"],
-           ["A. 3257840388504953787", "B. 2151901553968352745", "C. 47886854082066804", "D. -4172144997902289642 "],
+           ["A. Stampys lovely world", "B. Notch's Head", "C. DanTDMs mod showcase world", "D. Minecraft Tutorial World "],
            ["A. DanTDM", "B. Stampylongnose", "C. Technoblade", "D. CaptianSparklez"],
            ["A. 23", "B. 25", "C. 22", "D. 24"],
            ["A. 2014", "B. 2015", "C. 2013", "D. 2016"],
@@ -98,9 +122,9 @@ print()
 sleep(1)
 print()
 sleep(1)
-print(" Hello {} Thank You for Participating in this game".format(name))
+print(" Hello {} and welcome to the QUIZ QUEST".format(name))
 print()
-sleep(2)
+sleep(1)
 
 # This code is to make the quiz and for it to work
 
@@ -110,7 +134,7 @@ rounds_played = 0
 
 print()
 new_game()
+print()
+sleep(2)
 
-
-
-
+print("Thank you {} for playing this game,  Goodbye :)".format(name))
